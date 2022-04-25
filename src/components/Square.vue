@@ -2,13 +2,14 @@
   interface Props {
     col: number;
     row: number;
+    isActive: boolean;
   }
 
   const props = defineProps<Props>();
 </script>
 
 <template>
-  <div :class="'square' + ' column-' + props.col + ' row-' + props.row">
+  <div :class="'square' + (props.isActive ? ' active' : '') + ' column-' + props.col + ' row-' + props.row">
   </div>
 </template>
 
@@ -20,8 +21,11 @@
 
     margin: auto;
 
-    background-color: red;
+    background-color: #0b1444;
     border: 2px solid black;
+  }
+  .square.active {
+    background-color: red;
   }
 
   .column-1 {

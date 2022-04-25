@@ -26,7 +26,14 @@
 
 <template>
   <div class="scenery">
-    <Square :col="state.col" :row="state.row" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="1" :isActive="state.col === currentCol && state.row === 1" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="2" :isActive="state.col === currentCol && state.row === 2" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="3" :isActive="state.col === currentCol && state.row === 3" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="4" :isActive="state.col === currentCol && state.row === 4" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="5" :isActive="state.col === currentCol && state.row === 5" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="6" :isActive="state.col === currentCol && state.row === 6" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="7" :isActive="state.col === currentCol && state.row === 7" />
+    <Square v-for="currentCol in [1, 2, 3, 4, 5, 6, 7, 8]" :col="currentCol" :row="8" :isActive="state.col === currentCol && state.row === 8" />
   </div>
 </template>
 
@@ -35,7 +42,7 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    gap: 8px;
+    gap: 2px;
     justify-content: center;
     align-items: center;
 

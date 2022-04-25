@@ -31,7 +31,7 @@
     align-items: center;
 
     width: 100vw;
-    height: calc(100vh - 119px);
+    height: calc(100vh - 120px);
     padding: 1rem;
 
     background-color: #fafafa;
