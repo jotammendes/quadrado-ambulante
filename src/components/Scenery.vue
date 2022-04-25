@@ -1,0 +1,46 @@
+<script setup lang="ts">
+  import { onMounted, reactive } from 'vue';
+  import Square from '@/components/Square.vue';
+
+  interface coordinates {
+    col: number;
+    row: number;
+  }
+
+  const state = reactive<coordinates>({
+    col: 1,
+    row: 1,
+  });
+
+  const handleClick = (event: KeyboardEvent) => {
+    if(event.key === 'ArrowUp' && state.row > 1) state.row--;
+    if(event.key === 'ArrowLeft' && state.col > 1) state.col--;
+    if(event.key === 'ArrowDown' && state.row < 8) state.row++;
+    if(event.key === 'ArrowRight' && state.col < 8) state.col++;
+  };
+
+  onMounted(() => {
+    document.addEventListener('keyup', handleClick);
+  });
+</script>
+
+<template>
+  <div class="scenery">
+    <Square :col="state.col" :row="state.row" />
+  </div>
+</template>
+
+<style scoped>
+  .scenery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1px;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #0b1444;
+    border: 5px solid black;
+  }
+</style>
