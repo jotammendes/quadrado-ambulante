@@ -34,6 +34,6 @@
     height: calc(100vh - 119px);
     padding: 1rem;
 
-    background-color: #1d1d1f;
+    background-color: #fafafa;
   }
 </style>

@@ -35,12 +35,15 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    gap: 1px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
 
     width: 100%;
     height: 100%;
 
     background-color: #0b1444;
     border: 5px solid black;
+    box-shadow: 0 0 -5px 10px rgba(0, 0, 0, 0.1);
   }
 </style>

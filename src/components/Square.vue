@@ -8,17 +8,20 @@
 </script>
 
 <template>
-  <div :class="'square' + ' column-' + col + ' row-' + row">
+  <div :class="'square' + ' column-' + props.col + ' row-' + props.row">
   </div>
 </template>
 
 <style scoped>
   .square {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+
+    margin: auto;
 
     background-color: red;
+    border: 2px solid black;
   }
 
   .column-1 {
